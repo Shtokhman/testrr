@@ -3,7 +3,7 @@ const recorder = new ScriptRecorder();
 let result = null;
 recorder.start();
 
-document.querySelector('button#replay-btn').addEventListener('click', () => {
+document.querySelector('a').addEventListener('click', () => {
     result = recorder.getEvents();
     console.log('recorded events = ', result.length);
     recorder.stop();
