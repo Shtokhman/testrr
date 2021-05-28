@@ -15,7 +15,7 @@ function generateHtml(replayEvents, replaySpeed=1) {
             </head>
             <body>
             <div id="root"></div>
-            <script src="./script-rrweb.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/rrweb@latest/dist/rrweb.min.js"></script>
             <script>var recording = ${JSON.stringify(replayEvents)}; var replayer = new rrweb.Replayer(recording, {speed: ${replaySpeed}, root: document.getElementById('root'), mouseTail: false}); replayer.play()</script>
             </body>
             </html>`;
