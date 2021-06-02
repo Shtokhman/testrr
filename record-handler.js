@@ -22,13 +22,16 @@ function generateHtml(replayEvents, replaySpeed=1) {
 }
 
 let round = 0;
+
+document.querySelector('button.waves-effect.col.s12.m12.l12.btn-large.uiColorButton').addEventListener('click', () => {        // change selector to more specific one (start)
+    round = 1;
+})
+
 document.querySelector('input[type=submit][value="Submit"]').addEventListener('click', () => {
     round++;
-    if (round === 10) {
-        recorder.stop();
-        result = recorder.getEvents();
-        window.result = generateHtml(result.map(e => e.event));
-
-    }
+    recorder.stop();
+    result = recorder.getEvents();
+    window.result = generateHtml(result.map(e => e.event), 0.1);
+    if (round !== 11) { recorder.restart(); }
     console.log(`Round - ${round}`)
 })
