@@ -33,7 +33,7 @@ function ScriptRecorder() {
     const interaction = rrweb.EventType.IncrementalSnapshot;
     const input = rrweb.IncrementalSource.Input;
     const finder = new SelectorFinder();
-    const events = [];
+    let events = [];
 
     const uniqueInputEvents = (events) =>
         events.filter(({ event: e }, index, arr) => {
@@ -57,6 +57,7 @@ function ScriptRecorder() {
         })
     };
     this.stop = () => { console.warn('Stop before started') };
+    this.restart = () => { events = []; this.start() };
     // this.getEvents = () => uniqueInputEvents(events);
     this.getEvents = () => events;
 
