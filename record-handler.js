@@ -31,7 +31,7 @@ document.querySelector('input[type=submit][value="Submit"]').addEventListener('c
     round++;
     recorder.stop();
     result = recorder.getEvents();
-    window.result = generateHtml(result.map(e => e.event), 0.7);
+    window.result = generateHtml(result.map(e => e.event), 1.1);
     if (round !== 11) { recorder.restart(); }
     console.log(`Round - ${round}`)
 })
