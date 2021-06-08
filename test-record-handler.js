@@ -42,7 +42,7 @@ document.addEventListener("keydown", function(event) {
     console.log(shiftKey && event.key === 'b');
 
 
-    if (event.shiftKey && event.key === 'b') {
+    if (event.altKey && event.key === 'b') {
         console.log("SUCCESS!!!");
     }
 });
