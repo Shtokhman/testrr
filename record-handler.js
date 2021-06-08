@@ -37,6 +37,11 @@ document.querySelector('button.waves-effect.col.s12.m12.l12.btn-large.uiColorBut
 // })
 
 document.addEventListener("keydown", function(event) {
+    console.log("Pressed");
+    console.log(event.altKey);
+    console.log(event.key === 'b');
+    console.log(shiftKey && event.key === 'b');
+
     if (event.shiftKey && event.key === 'b') {
         round++;
         recorder.stop();
