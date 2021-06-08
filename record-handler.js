@@ -35,24 +35,14 @@ document.querySelector('button.waves-effect.col.s12.m12.l12.btn-large.uiColorBut
 //     if (round !== 11) { recorder.restart(); }
 //     console.log(`Round - ${round}`)
 // })
+
 document.addEventListener("keydown", function(event) {
-    console.log("Pressed");
-    console.log(event.shiftKey);
-    console.log(event.altKey);
-    console.log(event.key === 'b');
-
-
     if (event.shiftKey && event.key === 'b') {
-        console.log("SUCCESS!!!");
+        round++;
+        recorder.stop();
+        result = recorder.getEvents();
+        window.result = generateHtml(result.map(e => e.event), 0.1);
+        if (round !== 11) { recorder.restart(); }
+        console.log(`Round - ${round}`)
     }
-});
-
-$('form[ng-reflect-form="[object Object]"][class="ng-untouched ng-pristine ng-invalid"]').submit(function() {
-    round++;
-    recorder.stop();
-    result = recorder.getEvents();
-    window.result = generateHtml(result.map(e => e.event), 0.1);
-    if (round !== 11) { recorder.restart(); }
-    console.log(`Round - ${round}`)
-    return true; // return false to cancel form action
 });
