@@ -39,7 +39,7 @@ document.addEventListener("keydown", function(event) {
     console.log("Pressed");
     console.log(event.altKey);
     console.log(event.key === 'b');
-    console.log(shiftKey && event.key === 'b');
+    console.log(event.altKey && event.key === 'b');
 
 
     if (event.altKey && event.key === 'b') {
