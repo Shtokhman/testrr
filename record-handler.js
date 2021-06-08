@@ -27,22 +27,22 @@ document.querySelector('button.waves-effect.col.s12.m12.l12.btn-large.uiColorBut
     round = 1;
 })
 
-// document.querySelector('input[type=submit][value="Submit"]').addEventListener('click', () => {
+document.querySelector('input[type=submit][value="Submit"]').addEventListener('click', () => {
 //     round++;
 //     recorder.stop();
 //     result = recorder.getEvents();
 //     window.result = generateHtml(result.map(e => e.event), 1.1);
-//     if (round !== 11) { recorder.restart(); }
+    if (round !== 11) { recorder.restart(); }
 //     console.log(`Round - ${round}`)
-// })
+})
 
 document.addEventListener("keydown", function(event) {
     if (event.altKey && event.key === 'b') {
         round++;
         recorder.stop();
         result = recorder.getEvents();
-        window.result = generateHtml(result.map(e => e.event), 0.1);
-        if (round !== 11) { recorder.restart(); }
+        window.result = generateHtml(result.map(e => e.event), 1.2);
+//         if (round !== 11) { recorder.restart(); }
         console.log(`Round - ${round}`)
     }
 });
